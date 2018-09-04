@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculate Class Cost</h2>
+
+Desired Income per class (Space, Teacher, or Replacement Teacher)<br>
+<input id="desiredIncome" type="number" value=65>
+<br>
+How much will materials cost per student?<br>
+<input id="consumablesPerStudent" type="number" value=5>
+<br><br>
+What is the cost of tools that need to be aquired to run the class?<br>
+<input id="startup" type="number"value=250>
+<br><br>
+What is the student compacity given our tools, space, and parking<br>
+<input id="maxStudentsPerClass" type="number" value=6>
+<br><br>
+How many classes does the teacher want to commit to hold?<br>
+<input id="preCommitedClasses" type="number" value=4>
+<br><br>
+
+<button onclick="calc.submitAction()">Submit</button>
+
+<p>Resulting cost per student before eventbrite fees</p>
+<p id="costResult"></p>
+
+<script type="text/javascript" src="classCalc.js"></script>
+
+</body>
+</html>
