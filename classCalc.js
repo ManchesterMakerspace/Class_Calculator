@@ -15,6 +15,10 @@ var calc = {
         console.log('cost per student minus start: ' + totalIncome / maxStudentsPerClass + consumablesPerStudent);
         return costPerStudent;
     },
+    eventbrite: function(costPerStudent, maxStudentsPerClass){
+        var percent = costPerStudent * 0.06;
+        return costPerStudent + percent + 1.59;
+    },
     submitAction: function(){
         var desiredIncome         = document.getElementById('desiredIncome').value;
         var consumablesPerStudent = document.getElementById('consumablesPerStudent').value;
@@ -24,5 +28,6 @@ var calc = {
 
         var costPerStudent = calc.cost(desiredIncome, consumablesPerStudent, startupCost, maxStudentsPerClass, preCommitedClasses);
         document.getElementById('costResult').innerHTML = costPerStudent;
+        document.getElementById('ebCost').innerHTML = calc.eventbrite(costPerStudent, maxStudentsPerClass);
     }
 };
