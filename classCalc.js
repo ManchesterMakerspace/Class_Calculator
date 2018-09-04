@@ -12,7 +12,7 @@ var calc = {
         var materialsPerClass = (deferredStartupRate + consumablesPerStudent) * maxStudentsPerClass;
         var totalClassCost = totalIncome + materialsPerClass;
         var costPerStudent = totalClassCost / maxStudentsPerClass;
-        console.log('cost per student minus start: ' + totalIncome / maxStudentsPerClass + consumablesPerStudent);
+        console.log('cost per student minus start: $' + totalIncome / maxStudentsPerClass + consumablesPerStudent);
         return costPerStudent;
     },
     eventbrite: function(costPerStudent, maxStudentsPerClass){
@@ -27,7 +27,7 @@ var calc = {
         var preCommitedClasses    = document.getElementById("preCommitedClasses").value;
 
         var costPerStudent = calc.cost(desiredIncome, consumablesPerStudent, startupCost, maxStudentsPerClass, preCommitedClasses);
-        document.getElementById('costResult').innerHTML = costPerStudent;
-        document.getElementById('ebCost').innerHTML = calc.eventbrite(costPerStudent, maxStudentsPerClass);
+        document.getElementById('costResult').innerHTML = costPerStudent.toFixed(2);
+        document.getElementById('ebCost').innerHTML = calc.eventbrite(costPerStudent, maxStudentsPerClass).toFixed(2);
     }
 };
