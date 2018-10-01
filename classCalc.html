@@ -3,27 +3,45 @@
 <body>
 
 <h2>Calculate Class Cost</h2>
+<p> This tool has floating point math issues still, just put in a fraction if you get weird numbers</p>
 
-Desired Income per class (Space, Teacher, or Replacement Teacher)<br>
+Desired Income per class (Teacher or any potential teacher in future)<br>
 <input id="desiredIncome" type="number" value=65>
-<br>
+<br><br>
 How much will materials cost per student?<br>
-<input id="consumablesPerStudent" type="number" value=5>
+<input id="consumablesPerStudent" type="number" value=0>
 <br><br>
 What is the cost of tools that need to be aquired to run the class?<br>
-<input id="startup" type="number"value=250>
+<input id="startup" type="number"value=0>
 <br><br>
 What is the student compacity given our tools, space, and parking<br>
 <input id="maxStudentsPerClass" type="number" value=6>
 <br><br>
-How many classes does the teacher want to commit to hold?<br>
-<input id="preCommitedClasses" type="number" value=4>
+What is the minimal amount of students this class needs to run<br>
+<input id="minStudentsPerClass" type="number" value=3>
+<br><br>
+How many classes does the teacher want to commit to hold? (important if there is startup cost)<br>
+<input id="preCommitedClasses" type="number" value=1>
 <br><br>
 
 <button onclick="calc.submitAction()">Submit</button>
 
-<p>Cost per student: $<label id="costResult"></label></p>
+<h2>Minimal price per student</h2>
+<p><i>(given minimal number of students attend)</i></p>
+
+<p>Cost per member: $<label id="memberCost"></label></p>
+<p>Post Eventbrite fee: $<label id="ebCostMember"></label></p>
+<p>Cost per student: $<label id="studentCost"></label></p>
 <p>Post Eventbrite fee: $<label id="ebCost"></label></p>
+
+<h2> Optimistic price per student</h2>
+<p><i>(if class is filled)</i></p>
+
+<p>Cost per member: $<label id="OPmemberCost"></label></p>
+<p>Post Eventbrite fee: $<label id="OPebCostMember"></label></p>
+<p>Cost per student: $<label id="OPstudentCost"></label></p>
+<p>Post Eventbrite fee: $<label id="OPebCost"></label></p>
+
 
 <script type="text/javascript" src="classCalc.js"></script>
 
